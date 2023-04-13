@@ -17,3 +17,8 @@ def move(way,gridx,gridy,x,y,location_move):
         print('You cannot move forwad, grid is done')
     else:
         return [new_location_x,new_location_y,way]
+
+gridx,gridy= map(int, input('GRID:').split())
+
+all_coordinates=[] 
+final_result=[] 
