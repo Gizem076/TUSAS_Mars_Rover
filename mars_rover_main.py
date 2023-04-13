@@ -31,3 +31,6 @@ def main():
 
     for x, y, z in results:
         print(x, y, z) #1.rover: 1 3 N / 2.rover: 5 1 E
+
+if __name__ == '__main__':
+    main()
