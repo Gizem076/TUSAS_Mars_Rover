@@ -44,3 +44,7 @@ for i in range(1,(rover_number+1)):
                     move_coordinates.pop(0)
     else:
         print('The both rover is in the same location,please enter another coordinate !')
+    final_result.append(move_coordinates[0])
+    
+for x, y, z in final_result:
+    print(x, y, z)
