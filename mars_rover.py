@@ -29,3 +29,9 @@ class Rover:
         else:
             print('The both rover is in the same location,please enter another coordinate')
             exit()
+
+if __name__ == '__main__':
+    gridx, gridy = map(int, input('GRID:').split()) #5 5
+    intersection = []
+    all_coords = []
+    results = []
