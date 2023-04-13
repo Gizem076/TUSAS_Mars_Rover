@@ -57,3 +57,6 @@ if __name__ == '__main__':
         else:
             print('The both rover is in the same location,please enter another coordinate !')
             exit()
+
+    for x, y, z in results:
+        print(x, y, z) #1.rover: 1 3 N / 2.rover: 5 1 E
