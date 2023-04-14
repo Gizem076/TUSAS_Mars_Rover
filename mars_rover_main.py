@@ -9,6 +9,7 @@ def main():
 
     for i in range(1,(rover_number+1)): 
         x, y, way = input('Coordinates for rover %d: ' %i).split() #1.rover: 1 2 N / 2.rover: 3 3 E
+        check=True #To update 'check' value after failed rover (for next rover)
         rover = Rover(int(x), int(y), gridx, gridy, way)
         for j in input('Instructions for rover %d: ' %i): #1.rover: LMLMLMLMM / 2.rover: MMRMMRMRRM
             if j not in 'RLM': #For the check incorrect character input
@@ -20,7 +21,9 @@ def main():
                     rover.turn_left()
                 elif j=='M' :
                     rover.move()
-                    if (rover.x, rover.y) in all_coords: #For the check if the moved location coincides with the previous rover location.
+                    if rover.x>gridx or rover.y>gridy:
+                        check=False
+                    elif (rover.x, rover.y) in all_coords: #For the check if the moved location coincides with the previous rover location.
                         check=False
                     else:
                         continue
@@ -36,7 +39,7 @@ def main():
     for x, y, z in results:
         print(x, y, z) #1.rover: 1 3 N / 2.rover: 5 1 E
 
-    #Testing phase
+    #Testing the outputs given in the document
     result1= (1,3,'N')
     result2= (5,1,'E')
     if result1==results[0]:
